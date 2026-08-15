@@ -8,9 +8,9 @@ Aplicação desenvolvida para a disciplina de **Backend com Node.js e Express**,
 
 # Tecnologias Utilizadas
 
-* Node.js (ES Modules)
-* Express
-* Postman (testes da API)
+- Node.js (ES Modules)
+- Express
+- Postman (testes da API)
 
 > **Observação:** Os testes e as capturas de tela foram realizados utilizando o **Postman**, devido às limitações da versão gratuita da extensão **Thunder Client** na IDE Cursor.
 
@@ -103,8 +103,65 @@ docs/
 
 O projeto foi organizado seguindo o padrão **MVC (Model-View-Controller)**:
 
-* **Models:** responsáveis pelo armazenamento e manipulação dos dados em memória.
-* **Controllers:** contêm a lógica de negócio e processam as requisições.
-* **Routes:** definem os endpoints da API e direcionam as requisições para os controllers.
+- **Models:** responsáveis pelo armazenamento e manipulação dos dados em memória.
+- **Controllers:** contêm a lógica de negócio e processam as requisições.
+- **Routes:** definem os endpoints da API e direcionam as requisições para os controllers.
 
 Essa separação facilita a organização, manutenção e escalabilidade da aplicação.
+
+Repositório destinado às atividades da disciplina de **Backend Avançado (Node.js & Express)**.
+
+---
+
+## Atividade 3 — API RESTful com MongoDB, Mongoose, JWT e MVC + Services
+
+Aplicação desenvolvida para gerenciar o **CRUD de usuários** com persistência no **MongoDB**, autenticação segura via **JWT (JSON Web Token)**, criptografia de senhas com **bcryptjs** e organização arquitetural em camadas (**MVC + Services**).
+
+### Tecnologias Utilizadas
+
+- **Node.js** (ES Modules)
+- **Express**
+- **MongoDB** & **Mongoose**
+- **jsonwebtoken (JWT)**
+- **dotenv**
+- **Thunder Client** (testes da API)
+
+### Estrutura da Atividade 3
+
+```text
+atividade3/
+├── controllers/
+│   └── userController.js
+├── database/
+│   └── database.js
+├── middlewares/
+│   └── authMiddleware.js
+├── models/
+│   └── userModel.js
+├── routes/
+│   └── userRoutes.js
+├── services/
+│   └── userService.js
+├── docs/
+│   ├── 01-post-user.png
+│   ├── 02-post-login.png
+│   ├── 03-get-users.png
+│   ├── 04-get-user-by-id.png
+│   ├── 05-put-user.png
+│   ├── 06-delete-user.png
+│   └── 07-unauthorized.png
+├── .env
+├── app.js
+├── package.json
+└── README.md
+
+```
+
+Rotas Disponíveis
+Método Endpoint Acesso Descrição
+POST /users Público Cadastra um novo usuário no banco
+POST /login Público Autentica o usuário e gera o token JWT
+GET /users Protegido Lista todos os usuários cadastrados
+GET /users/:id Protegido Busca um usuário pelo seu ID
+PUT /users/:id Protegido Atualiza os dados de um usuário pelo ID
+DELETE /users/:id Protegido Remove um usuário pelo ID
